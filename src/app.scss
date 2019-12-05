@@ -3,32 +3,10 @@ body{
     margin: 0;
     padding: 0;
 }
-header{
-    position: relative;
+.main{
     width: 100%;
-    margin: 0 auto;
+    max-width: 980px;
+    margin: 20px auto 80px;
     padding: 0 10px;
-    height: 100px;
-    .wrapper{
-        position: relative;
-        display: block;
-        max-width: 980px;
-        margin: 0 auto;
-        height: 100%;
-        .logo{
-            position:absolute;
-            display: block;
-            width: 50px;
-            left:10px;
-            top:50%;
-            transform: translateY(-50%);
-            img{
-                width: 100%;
-                display: block;
-                margin: 0;
-            }
-        }
-    }
-    
 
 }
