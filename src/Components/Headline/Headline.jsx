@@ -12,7 +12,7 @@ class Hedline extends Component {
     if(!header){
       return null
     }
-    
+
     return (
       <div data-test="HeadLineComponent">
         <h1 data-test="header">{header}</h1>
@@ -22,6 +22,16 @@ class Hedline extends Component {
   }
 }
 
-Hedline.propTypes = {};
+Hedline.propTypes = {
+  header:PropTypes.string,
+  desc:PropTypes.string,
+  tempArr:PropTypes.arrayOf(PropTypes.shape({
+    fName : PropTypes.string,
+    lName : PropTypes.string,
+    email : PropTypes.string,
+    age:PropTypes.number,
+    onlineStatus: PropTypes.bool
+  }))
+};
 
 export default Hedline;
