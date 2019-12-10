@@ -17,18 +17,35 @@ const tempArr=[{
 }]
 
 export class App extends React.Component {
+   state={
+     hideBtn:false
+   }
 
   fetch = () =>{
     this.props.fetchPosts()
+    this.example_method()
+  }
+
+  example_method = ()=>{
+    const{hideBtn} = this.state
+    this.setState({
+      hideBtn: !hideBtn
+    })
+  }
+
+  example_method_updateValue = (value) =>{
+    return value+1
   }
   render() {
     const {posts} = this.props
+    const {hideBtn} = this.state
     return (
       <div className="App" data-test="appComponent">
       <Header/>
       <section className="main">
       <Headline tempArr = {tempArr} header="Posts" desc="Click the button to render posts"/>
-      <Button buttonText="UPLOAD POSTS" emitEvent = {this.fetch}/>
+      {!hideBtn &&  <Button buttonText="UPLOAD POSTS" emitEvent = {this.fetch}/>}
+     
       {posts && posts.length>0 && posts.map(post=>{
         const {title, body} = post
         const configListItem = {

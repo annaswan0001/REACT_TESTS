@@ -18,9 +18,9 @@ describe("Render button", () => {
 
   describe("Button renders", () => {
     let wrapper;
-    let mockFunc;
+    let mockFunc; //(1)
     beforeEach(() => {
-        mockFunc = jest.fn()
+        mockFunc = jest.fn() //(2)
       const props = {
         buttonText: "Button",
         emitEvent: mockFunc
@@ -34,8 +34,8 @@ describe("Render button", () => {
 
     test("it should emit collback on click event", ()=>{
         const button = findByAttr(wrapper, "buttonComponent");
-        button.simulate('click');
-        const callback = mockFunc.mock.calls.length;
+        button.simulate('click');//(3)
+        const callback = mockFunc.mock.calls.length;//(4)
         expect(callback).toBe(1)
     })
   });
