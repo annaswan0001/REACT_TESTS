@@ -16,7 +16,7 @@ const tempArr=[{
   onlineStatus: true
 }]
 
-class App extends React.Component {
+export class App extends React.Component {
 
   fetch = () =>{
     this.props.fetchPosts()
@@ -24,12 +24,12 @@ class App extends React.Component {
   render() {
     const {posts} = this.props
     return (
-      <div className="App">
+      <div className="App" data-test="appComponent">
       <Header/>
       <section className="main">
       <Headline tempArr = {tempArr} header="Posts" desc="Click the button to render posts"/>
       <Button buttonText="UPLOAD POSTS" emitEvent = {this.fetch}/>
-      {posts.length>0 && posts.map(post=>{
+      {posts && posts.length>0 && posts.map(post=>{
         const {title, body} = post
         const configListItem = {
           title,
