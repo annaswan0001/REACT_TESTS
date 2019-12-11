@@ -43,10 +43,8 @@ describe("render App",()=>{
     })
 
     it("Should update state correct", ()=>{
-    
         const component = wrapper.childAt(0) // child of provider
         const classInstance = component.instance();
-      
         classInstance.example_method() 
         const newState = classInstance.state.hideBtn
         expect(newState).toBe(true)
@@ -57,6 +55,6 @@ describe("render App",()=>{
         const component =wrapper.childAt(0);
         const classInstance =  component.instance();
         const newValue = classInstance. example_method_updateValue(7);
-        expect(newValue).toBe(8)
+        expect(newValue).toBe(2)
     })
 })
