@@ -55,6 +55,6 @@ describe("render App",()=>{
         const component =wrapper.childAt(0);
         const classInstance =  component.instance();
         const newValue = classInstance. example_method_updateValue(7);
-        expect(newValue).toBe(2)
+        expect(newValue).toBe(0)
     })
 })
