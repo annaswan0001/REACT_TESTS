@@ -22,10 +22,12 @@
     "eject": "react-scripts eject"
   },
   "husky": {
-      "hooks": {
-        "pre-push": "npm test"
-      }
-    },
+    "hooks": {
+      "pre-commit": "npm test",
+      "pre-push": "npm test",
+      "...": "..."
+    }
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
